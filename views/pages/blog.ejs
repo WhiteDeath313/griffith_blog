@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container" style="background-color: lightgray;">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div style="margin-top: 30px;">
+        <h1><%=blog.subject%></h1>
+        <h2><%=blog.description%></h2>
+        <div style="margin-top: 50px;">
+            <% comments.forEach(function(comment) { %>
+                <div style="background-color: darkgray; display: flex; margin-top: 10px; border-radius: 8px;">
+                    <div style="width: 75%;">
+                        <p style="margin-top: 10px; margin-left: 10px;"><%=comment.author%>: <%=comment.comment%></p>
+                        <!-- <p style="margin-top: 10px; font-style: italic; margin-left: 10px;"></p> -->
+                     </div>
+                     <div style="width: 10%; margin-top: 10px; text-align: center;">
+                        <a href="/edit_comment?comment_id=<%=comment._id%>"><button type="button" style="border-radius: 8px; background-color: lightgreen;">EDIT</button></a> 
+                     </div>
+                     <div style="width: 10%; margin-top: 10px; text-align: center;">
+                        <a href="/delete_comment?comment_id=<%=comment._id%>&blog_id=<%=blog._id%>"><button type="button" style="border-radius: 8px; background-color: red;">DELETE</button></a> 
+                     </div>
+                </div>
+            <% }); %>
+        </div>
+        <div style="margin-top: 25px;">
+            <a href="/new_comment?blog_id=<%=blog._id%>"><button type="button" style="border-radius: 8px; background-color: lightgray;">Add comment</button></a> 
+        </div>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

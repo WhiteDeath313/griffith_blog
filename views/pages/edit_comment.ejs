@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container" style="background-color: lightgray;">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div style="margin-top: 30px;">
+        <form action="/edit_comment" method="POST">
+            <div style="text-align: center;">
+                <input type="text" value="<%=comment.author%>" name="author" style="width: 50%; text-align: center; border-radius: 8px;">
+            </div>
+            <div style="margin-top: 30px; text-align: center;">
+                <input type="text" value="<%=comment.comment%>" name="comment" style="width: 50%; text-align: center; border-radius: 8px;">
+            </div>
+            <div style="margin-top: 30px; text-align: center;">
+                <button type="submit"style="text-align: center; border-radius: 8px;">Confirm</button>
+            </div>
+            <input type="hidden" value="<%=comment.blog_id%>" name="blog_id">
+            <input type="hidden" value="<%=comment._id%>" name="comment_id">
+        </form>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

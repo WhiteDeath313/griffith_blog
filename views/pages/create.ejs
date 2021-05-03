@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container" style="background-color: lightgray;">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div style="margin-top: 30px;">
+        <form action="/create" method="POST">
+            <div style="text-align: center;">
+                <input type="text" placeholder="Subject of blog" name="subject" style="width: 50%; text-align: center; border-radius: 8px;">
+            </div>
+            <div style="margin-top: 30px; text-align: center;">
+                <input type="text" placeholder="Description" name="description" style="width: 50%; text-align: center; border-radius: 8px;">
+            </div>
+            <div style="margin-top: 30px; text-align: center;">
+                <button type="submit"style="text-align: center; border-radius: 8px;">Create</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

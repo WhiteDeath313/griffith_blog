@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container" style="background-color: lightgray;">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div style="margin-top: 30px;">
+        <h1>Subjects</h1>
+        <% results.forEach(function(result) { %>
+            <div style="background-color: darkgray; display: flex; margin-top: 40px; border-radius: 8px;">
+                <div style="width: 75%;">
+                    <p style="margin-top: 20px; margin-left: 10px;"><%=result.subject%></p>
+                    <p style="margin-top: 10px; font-style: italic; margin-left: 10px;"><%=result.description%></p>
+                 </div>
+                 <div style="width: 20%; padding: 1%; text-align: center; margin-top: 25px;">
+                    <a href="/blog?id=<%=result._id%>"><button type="button" style="border-radius: 8px; background-color: lightyellow;">comment space</button></a> 
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
