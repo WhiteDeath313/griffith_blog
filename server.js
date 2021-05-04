@@ -18,7 +18,10 @@ MongoClient.connect('mongodb+srv://root:toor@cluster0.7sq0l.mongodb.net/Cluster0
     app.set('view engine', 'ejs');
 
     app.listen(process.env.PORT || 3000, function() {
-        console.log('listening on 3000')
+        if (process.env.PORT != undefined)
+            console.log("listening on " + process.env.PORT);
+        else
+            console.log("listening on 3000");
     })
 
     app.get('/', (req, res) => {
