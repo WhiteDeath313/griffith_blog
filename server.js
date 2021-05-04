@@ -17,7 +17,7 @@ MongoClient.connect('mongodb+srv://root:toor@cluster0.7sq0l.mongodb.net/Cluster0
     app.use(bodyParser.urlencoded({ extended: true }))
     app.set('view engine', 'ejs');
 
-    app.listen(3000, function() {
+    app.listen(process.env.PORT || 3000, function() {
         console.log('listening on 3000')
     })
 
